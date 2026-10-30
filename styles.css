@@ -31,3 +31,30 @@
     left: 18px;
     z-index: 2;
 }
+/* Homepage hero: display the official Leaf Lantern logo */
+.home-hero .hero-visual {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible;
+}
+
+.home-hero .hero-visual::before,
+.home-hero .hero-visual::after {
+    display: none !important;
+    content: none !important;
+}
+
+.home-hero .hero-brand-logo {
+    display: block !important;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 5;
+}

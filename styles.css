@@ -4,3 +4,30 @@
 @media(max-width:900px){.nav{gap:15px}.nav a{font-size:.75rem}.home-hero{min-height:470px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.occasion-card{grid-template-columns:1fr}.occasion-visual{min-height:230px}.services-grid{grid-template-columns:repeat(2,1fr)}.studio-hero-art{height:370px}}
 @media(max-width:680px){.site-header{flex-wrap:wrap}.menu-toggle{display:block}.nav{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:12px;padding:8px 0 12px}.nav.open{display:flex}.nav a.active:after{display:none}main{padding:32px 18px 58px}.home-hero,.studio-hero{grid-template-columns:1fr;gap:28px;padding:20px 0 42px}.hero-visual{min-height:300px;order:-1}.hero-monogram{font-size:9rem}.hero-copy h1,.studio-hero h1{font-size:3.35rem}.intro-strip{align-items:flex-start;flex-direction:column;gap:6px}.world-section{padding:60px 0 25px}.division-grid,.occasion-grid,.contact-choice{grid-template-columns:1fr}.division-art{height:250px}.category-heading{display:block}.category-heading>p{margin-top:12px}.product-grid{grid-template-columns:1fr}.product-art{height:235px}.product-top{flex-direction:row}.tag{text-align:right;white-space:normal}.occasion-card{grid-template-columns:1fr 1fr}.occasion-visual{min-height:270px}.occasion-copy{padding:20px 16px}.occasion-copy h3{font-size:1.55rem}.studio-hero-art{height:330px;order:-1}.studio-manifesto{padding:55px 8px;margin:25px 0 55px}.services-grid{grid-template-columns:1fr}.service-card{min-height:230px}.how-section{grid-template-columns:1fr;gap:28px;padding:48px 0}.steps{grid-template-columns:1fr;margin:35px 0}.contact-choice article{padding:28px 22px}.contact-choice article>p:not(.eyebrow){min-height:0}.closing-band{margin-top:45px;padding:48px 18px}footer{flex-direction:column;gap:4px}}
 @media(max-width:420px){.occasion-card{grid-template-columns:1fr}.occasion-visual{min-height:220px}.occasion-copy{padding:24px}.hero-actions{gap:16px;flex-wrap:wrap}.product-top{flex-direction:column}.tag{text-align:left}.brand img{height:50px}}
+/* Fix visibility and sizing of cake and cupcake photos */
+.occasion-visual {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 320px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.occasion-visual .occasion-photo {
+    position: absolute;
+    display: block;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.occasion-visual .visual-label {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+}

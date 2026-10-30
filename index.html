@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +25,48 @@
       max-width: 420px;
       height: auto;
       object-fit: contain;
+    }
+
+    /* Local images in the two division artwork columns */
+    .division-art {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .division-art-image {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .division-art .art-kicker {
+      position: absolute;
+      z-index: 2;
+      top: 22px;
+      left: 22px;
+    }
+
+    .food-art::after,
+    .studio-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.18),
+        transparent 35%,
+        rgba(0, 0, 0, 0.25)
+      );
+      pointer-events: none;
+    }
+
+    .food-art .food-plate,
+    .studio-art .studio-frame {
+      display: none;
     }
   </style>
 </head>
@@ -87,15 +130,13 @@
 
     </div>
 
-
-    <!-- SAME OFFICIAL LOGO AS TOP LEFT -->
-   <div class="hero-visual">
-  <img
-    src="assets/Leaf Lantern_ Good Food Delivered.png"
-    alt="Leaf Lantern — Good Food Delivered"
-    class="hero-brand-logo"
-  >
-</div>
+    <div class="hero-visual">
+      <img
+        src="assets/Leaf Lantern_ Good Food Delivered.png"
+        alt="Leaf Lantern — Good Food Delivered"
+        class="hero-brand-logo"
+      >
+    </div>
 
   </section>
 
@@ -124,7 +165,6 @@
 
     </div>
 
-
     <div class="division-grid">
 
       <!-- LEAF LANTERN FOOD -->
@@ -133,6 +173,13 @@
         <div class="division-art food-art">
 
           <span class="art-kicker">01 / FOOD</span>
+
+          <img
+            class="division-art-image"
+            src="assets/homemade-food.jpg"
+            alt="Homemade food prepared with care"
+            loading="lazy"
+          >
 
           <div class="food-plate">
             <i></i>
@@ -170,6 +217,13 @@
         <div class="division-art studio-art">
 
           <span class="art-kicker">02 / CREATIVE</span>
+
+          <img
+            class="division-art-image"
+            src="assets/creative-story.jpg"
+            alt="Creative photography and visual storytelling"
+            loading="lazy"
+          >
 
           <div class="studio-frame">
 
@@ -241,7 +295,6 @@
   <span>Good things grow here.</span>
 
 </footer>
-
 
 <script src="script.js"></script>
 

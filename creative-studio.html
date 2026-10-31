@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Leaf Lantern Creative Studio — photography, videography, creative editing and brand content.">
+<meta name="description" content="Leaf Lantern Creative Studio — photography, videography, creative editing, reels, brand content and event coverage.">
 <title>Creative Studio | Leaf Lantern</title>
 <link rel="stylesheet" href="styles.css">
 
@@ -29,22 +28,44 @@
 .studio-hero-logo {
     display: block;
     width: 100%;
-    max-width: 420px;
+    max-width: 350px;
     height: auto;
     object-fit: contain;
 }
 
-/* Service images */
+/* Shorter hero */
+.studio-hero-copy > p:not(.eyebrow) {
+    max-width: 460px;
+}
+
+/* Services appear immediately after the hero */
+.services-section {
+    padding-top: 38px;
+}
+
+.services-section .category-heading {
+    margin-bottom: 24px;
+}
+
+.services-section .category-heading > p {
+    max-width: 360px;
+}
+
+.services-section .category-heading h2 {
+    margin-bottom: 0;
+}
+
+/* Service cards and images */
 .services-grid .service-card:not(.service-note) {
     overflow: hidden;
 }
 
 .service-image {
     width: 100%;
-    height: 220px;
+    height: 190px;
     overflow: hidden;
     border-radius: 12px;
-    margin: 18px 0 22px;
+    margin: 14px 0 18px;
     background: #e9e3d8;
 }
 
@@ -57,20 +78,91 @@
 }
 
 .service-card:not(.service-note):hover .service-image img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .service-card .service-symbol {
     display: none;
 }
 
+/* Compact service descriptions */
+.services-grid .service-card h3 {
+    margin-bottom: 8px;
+}
+
+.services-grid .service-card > p:not(.eyebrow) {
+    line-height: 1.65;
+}
+
+/* Keep the custom enquiry card compact */
+.service-note h3 {
+    margin-top: 10px;
+}
+
+/* Mobile-first adjustments */
 @media (max-width: 600px) {
-    .service-image {
-        height: 210px;
+    .studio-hero {
+        gap: 18px;
+    }
+
+    .studio-hero-copy h1 {
+        margin-bottom: 14px;
+    }
+
+    .studio-hero-copy > p:not(.eyebrow) {
+        margin-bottom: 18px;
     }
 
     .studio-hero-logo {
-        max-width: 320px;
+        max-width: 230px;
+    }
+
+    .services-section {
+        padding-top: 24px;
+    }
+
+    .services-section .category-heading {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    .services-section .category-heading > p {
+        margin-top: 10px;
+    }
+
+    .service-image {
+        height: 190px;
+        margin: 12px 0 16px;
+    }
+
+    .services-grid {
+        gap: 16px;
+    }
+
+    .services-grid .service-card {
+        padding: 18px;
+    }
+
+    .services-grid .service-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .services-grid .service-card > p:not(.eyebrow) {
+        font-size: 0.94rem;
+    }
+
+    .how-section {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 360px) {
+    .studio-hero-logo {
+        max-width: 190px;
+    }
+
+    .service-image {
+        height: 165px;
     }
 }
 </style>
@@ -95,7 +187,7 @@
 
 <main class="page-main studio-page">
 
-    <!-- HERO SECTION -->
+    <!-- COMPACT HERO -->
     <section class="studio-hero">
 
         <div class="studio-hero-copy">
@@ -108,9 +200,8 @@
             </h1>
 
             <p>
-                Thoughtful visuals and creative content that bring your ideas to life.
-                From a moment worth remembering to a brand ready to be seen,
-                let's shape your story together.
+                Photography, videos, reels and brand content
+                for your moments, memories and business.
             </p>
 
             <button class="button" onclick="enquireWhatsApp('Hello Leaf Lantern Creative Studio! I would like to enquire about your creative services. I can share my references and requirements here.')">
@@ -128,50 +219,34 @@
 
     </section>
 
-    <!-- MANIFESTO SECTION -->
-    <section class="studio-manifesto">
-        <p class="eyebrow">IDEAS DESERVE GOOD STORYTELLING</p>
-
-        <h2>
-            Every frame has a feeling.<br>
-            <em>Every brand has a voice.</em>
-        </h2>
-
-        <p>
-            We bring care, clarity and creativity to the way your moments
-            and ideas are captured, shaped and shared.
-        </p>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section class="services-section">
+    <!-- SERVICES: MOVED UP -->
+    <section class="services-section" id="services">
 
         <div class="category-heading">
             <div>
-                <p class="eyebrow">WHAT WE CAN CREATE</p>
+                <p class="eyebrow">WHAT WE OFFER</p>
 
                 <h2>
-                    Creative services,<br>
-                    <em>made personal.</em>
+                    Our Creative<br>
+                    <em>Services.</em>
                 </h2>
             </div>
 
             <p>
-                Tell us what you have in mind. We'll discuss the style,
-                scope and details with you before getting started.
+                Explore our services and tell us what you need.
             </p>
         </div>
 
         <div class="services-grid">
 
-            <!-- SERVICE 01: PHOTOGRAPHY -->
+            <!-- SERVICE 01 -->
             <article class="service-card">
                 <span class="service-number">01</span>
 
                 <div class="service-image">
                     <img
                         src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=85"
-                        alt="Professional photography camera"
+                        alt="Camera for photography"
                         loading="lazy"
                     >
                 </div>
@@ -179,19 +254,18 @@
                 <h3>Photography</h3>
 
                 <p>
-                    Thoughtful still images for people, products, occasions
-                    and the details that deserve to be remembered.
+                    Portraits, products, occasions and moments worth remembering.
                 </p>
             </article>
 
-            <!-- SERVICE 02: VIDEOGRAPHY -->
+            <!-- SERVICE 02 -->
             <article class="service-card">
                 <span class="service-number">02</span>
 
                 <div class="service-image">
                     <img
                         src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85"
-                        alt="Videography and filmmaking equipment"
+                        alt="Videography equipment"
                         loading="lazy"
                     >
                 </div>
@@ -199,19 +273,18 @@
                 <h3>Videography</h3>
 
                 <p>
-                    Visual storytelling that captures atmosphere,
-                    movement and the moments that make a story yours.
+                    Videos that capture the atmosphere, action and story of your moments.
                 </p>
             </article>
 
-            <!-- SERVICE 03: CREATIVE EDITING & REELS -->
+            <!-- SERVICE 03 -->
             <article class="service-card">
                 <span class="service-number">03</span>
 
                 <div class="service-image">
                     <img
                         src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=85"
-                        alt="Video editing and creative production"
+                        alt="Video editing and production"
                         loading="lazy"
                     >
                 </div>
@@ -219,19 +292,18 @@
                 <h3>Creative Editing &amp; Reels</h3>
 
                 <p>
-                    Polished edits, short-form videos and social-first
-                    content shaped to your preferred style.
+                    Engaging short videos, reels and polished creative edits.
                 </p>
             </article>
 
-            <!-- SERVICE 04: BRAND CONTENT -->
+            <!-- SERVICE 04 -->
             <article class="service-card">
                 <span class="service-number">04</span>
 
                 <div class="service-image">
                     <img
                         src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1000&q=85"
-                        alt="Creative brand content and business collaboration"
+                        alt="Brand content planning"
                         loading="lazy"
                     >
                 </div>
@@ -239,19 +311,18 @@
                 <h3>Brand Content Creation</h3>
 
                 <p>
-                    Visual content that helps businesses express their
-                    identity with consistency and personality.
+                    Creative visuals that showcase your business and brand identity.
                 </p>
             </article>
 
-            <!-- SERVICE 05: EVENTS -->
+            <!-- SERVICE 05 -->
             <article class="service-card">
                 <span class="service-number">05</span>
 
                 <div class="service-image">
                     <img
                         src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85"
-                        alt="Elegant event and celebration setup"
+                        alt="Event and celebration setup"
                         loading="lazy"
                     >
                 </div>
@@ -259,24 +330,22 @@
                 <h3>Events &amp; Celebrations</h3>
 
                 <p>
-                    Creative coverage for meaningful occasions,
-                    from the big moments to the little in-between details.
+                    Creative coverage for celebrations and special occasions.
                 </p>
             </article>
 
-            <!-- CUSTOM ENQUIRY CARD -->
+            <!-- CUSTOM ENQUIRY -->
             <article class="service-card service-note">
 
-                <p class="eyebrow">YOUR IDEA, OUR CREATIVE EYE</p>
+                <p class="eyebrow">HAVE AN IDEA?</p>
 
                 <h3>
-                    Have something<br>
-                    <em>different in mind?</em>
+                    Let's create<br>
+                    <em>something special.</em>
                 </h3>
 
                 <p>
-                    Share your idea with us. Let's see how we can
-                    bring it to life.
+                    Tell us about your project and let's explore the possibilities.
                 </p>
 
                 <button class="arrow-link" onclick="enquireWhatsApp('Hello Leaf Lantern Creative Studio! I have a creative project in mind and would like to discuss it.')">
@@ -292,11 +361,11 @@
     <section class="how-section">
 
         <div>
-            <p class="eyebrow">A SIMPLE WAY TO BEGIN</p>
+            <p class="eyebrow">HOW IT WORKS</p>
 
             <h2>
-                Your idea is<br>
-                <em>the starting point.</em>
+                Three simple<br>
+                <em>steps to begin.</em>
             </h2>
         </div>
 
@@ -306,10 +375,7 @@
                 <b>01</b>
                 <span>
                     <strong>Tell us your idea</strong>
-                    <small>
-                        Send a message with your occasion,
-                        project or content needs.
-                    </small>
+                    <small>Message us about your project or occasion.</small>
                 </span>
             </li>
 
@@ -317,21 +383,15 @@
                 <b>02</b>
                 <span>
                     <strong>Share your references</strong>
-                    <small>
-                        Send inspiration images, videos,
-                        style references and details privately on WhatsApp.
-                    </small>
+                    <small>Send inspiration images, videos or details on WhatsApp.</small>
                 </span>
             </li>
 
             <li>
                 <b>03</b>
                 <span>
-                    <strong>Let's plan it together</strong>
-                    <small>
-                        We'll discuss the approach, availability,
-                        scope and quote before confirming.
-                    </small>
+                    <strong>Plan it together</strong>
+                    <small>Discuss availability, scope and pricing before confirming.</small>
                 </span>
             </li>
 
@@ -344,23 +404,22 @@
         <p class="eyebrow">LET'S CREATE SOMETHING MEANINGFUL</p>
 
         <h2>
-            Your story deserves<br>
-            a thoughtful frame.
+            Have a project<br>
+            in mind?
         </h2>
 
         <p>
-            Tell us what you're imagining. We'll take it from there.
+            Let's talk about what you need.
         </p>
 
         <button class="button button-light" onclick="enquireWhatsApp('Hello Leaf Lantern Creative Studio! I would like to discuss a creative project. Please let me know how we can get started.')">
-            Start your enquiry ↗
+            Discuss your project ↗
         </button>
 
     </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
     <span>© <span id="year"></span> Leaf Lantern</span>
     <span>We Capture. We Create. We Tell Stories.</span>

@@ -2,279 +2,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Menu | Leaf Lantern</title>
-  <meta name="description" content="Explore homemade food, puffs, cutlets, sandwiches, plum cakes, non-alcoholic wine and homemade pickles from Leaf Lantern.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Homemade favourites, customized cakes and event cupcakes from Leaf Lantern Food.">
 
-  <style>
-    .menu-page {
-      padding: 60px 20px;
-    }
+    <title>Food &amp; Menu | Leaf Lantern</title>
 
-    .menu-heading {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+    <link rel="stylesheet" href="styles.css">
 
-    .menu-heading h1 {
-      margin-bottom: 12px;
-    }
+    <style>
+        .occasion-visual {
+            position: relative;
+            overflow: hidden;
+        }
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 28px;
-      max-width: 1150px;
-      margin: 0 auto;
-    }
+        .occasion-photo {
+            display: block;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
 
-    .menu-card {
-      background: #fff;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    }
-
-    .menu-card > img {
-      display: block;
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .menu-card-content {
-      padding: 22px;
-    }
-
-    .menu-card-content h3 {
-      margin: 0 0 10px;
-    }
-
-    .menu-card-content p {
-      margin-bottom: 12px;
-    }
-
-    .menu-card-content .price {
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .menu-card-content .minimum {
-      font-size: 13px;
-      opacity: 0.75;
-      margin-bottom: 18px;
-    }
-
-    .menu-card-content a,
-    .menu-card-content button {
-      display: inline-block;
-      border: none;
-      border-radius: 6px;
-      padding: 11px 18px;
-      background: #203c30;
-      color: #fff;
-      text-decoration: none;
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .special-orders {
-      max-width: 1100px;
-      margin: 65px auto 0;
-      text-align: center;
-    }
-
-    .special-orders h2 {
-      margin-bottom: 12px;
-    }
-
-    .menu-cta {
-      text-align: center;
-      margin: 65px auto 20px;
-      padding: 35px 20px;
-      background: #e8ecdf;
-      border-radius: 14px;
-      max-width: 1100px;
-    }
-
-    @media (max-width: 600px) {
-      .menu-page {
-        padding: 40px 15px;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .occasion-visual .visual-label {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
+<header class="site-header">
+    <a class="brand" href="index.html">
         <img src="assets/Leaf Lantern_ Good Food Delivered.png" alt="Leaf Lantern">
-      </a>
+    </a>
 
-      <nav class="main-nav">
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="menu.html" class="active">Our Menu</a>
+        <a class="active" href="menu.html">Food &amp; Menu</a>
         <a href="creative-studio.html">Creative Studio</a>
-        <a href="delivery.html">Delivery & Contact</a>
-      </nav>
-    </div>
-  </header>
+        <a href="delivery.html">Delivery &amp; Contact</a>
+    </nav>
+</header>
 
-  <main>
+<main class="page-main">
 
-    <section class="menu-page">
+    <!-- PAGE INTRODUCTION -->
+    <section class="page-heading">
+        <p class="eyebrow">LEAF LANTERN FOOD</p>
 
-      <div class="menu-heading">
-        <h1>Our Homemade Goodness</h1>
-        <p>Freshly prepared, thoughtfully made and delivered with love.</p>
-      </div>
+        <h1>Good things to <em>share.</em></h1>
 
-      <div class="menu-grid">
-
-        <!-- Puffs -->
-        <article class="menu-card">
-          <img src="assets/puffs.jpg.jpeg" alt="Homemade Puffs" loading="lazy">
-          <div class="menu-card-content">
-            <h3>Homemade Puffs</h3>
-            <p>Delicious homemade puffs, freshly prepared for every order.</p>
-            <p class="price">₹25 / piece</p>
-            <p class="minimum">Minimum order: 12 pieces</p>
-            <button onclick="orderWhatsApp('Homemade Puffs', 25, 12)">Order on WhatsApp</button>
-          </div>
-        </article>
-
-        <!-- Cutlets -->
-        <article class="menu-card">
-          <img src="assets/cutlet.jpg.jpeg" alt="Homemade Cutlets" loading="lazy">
-          <div class="menu-card-content">
-            <h3>Homemade Cutlets</h3>
-            <p>Homemade cutlets prepared with care and fresh ingredients.</p>
-            <p class="price">₹25 / piece</p>
-            <p class="minimum">Minimum order: 12 pieces</p>
-            <button onclick="orderWhatsApp('Homemade Cutlets', 25, 12)">Order on WhatsApp</button>
-          </div>
-        </article>
-
-        <!-- Sandwiches -->
-        <article class="menu-card">
-          <img src="assets/sandwich.jpg.jpeg" alt="Homemade Sandwiches" loading="lazy">
-          <div class="menu-card-content">
-            <h3>Homemade Sandwiches</h3>
-            <p>Fresh and tasty homemade sandwiches for every occasion.</p>
-            <p class="price">₹45 / piece</p>
-            <p class="minimum">Minimum order: 12 pieces</p>
-            <button onclick="orderWhatsApp('Homemade Sandwiches', 45, 12)">Order on WhatsApp</button>
-          </div>
-        </article>
-
-        <!-- Non-alcoholic wine -->
-        <article class="menu-card">
-          <img src="assets/wine.jpg.webp" alt="Non-Alcoholic Wine" loading="lazy">
-          <div class="menu-card-content">
-            <h3>Non-Alcoholic Wine</h3>
-            <p>A refreshing non-alcoholic choice for your celebrations.</p>
-            <p class="price">₹350 / 750 ml</p>
-            <p class="minimum">Minimum order: 3 bottles</p>
-            <button onclick="orderWhatsApp('Non-Alcoholic Wine', 350, 3)">Order on WhatsApp</button>
-          </div>
-        </article>
-
-        <!-- Plum Cake -->
-        <article class="menu-card">
-          <img src="assets/plum-cake.jpg.jpeg" alt="Homemade Plum Cake" loading="lazy">
-          <div class="menu-card-content">
-            <h3>Homemade Plum Cake</h3>
-            <p>Rich and delicious plum cake, perfect for celebrations.</p>
-            <p class="price">₹300 / 400 g</p>
-            <p class="minimum">Minimum order: 3 cakes</p>
-            <button onclick="orderWhatsApp('Homemade Plum Cake', 300, 3)">Order on WhatsApp</button>
-          </div>
-        </article>
-
-        <!-- Homemade Pickles -->
-        <article class="menu-card">
-          <img
-            src="assets/homemade-pickle.png"
-            alt="Homemade Pickles"
-            loading="eager"
-            style="display:block; width:100%; height:250px; object-fit:cover;"
-          >
-          <div class="menu-card-content">
-            <h3>Homemade Pickles</h3>
-            <p>Homemade pickles prepared with traditional flavours and care.</p>
-            <button onclick="enquireWhatsApp('Homemade Pickles')">Enquire on WhatsApp</button>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Special Orders -->
-      <section class="special-orders">
-        <h2>Made for Your Special Moments</h2>
-        <p>Planning a birthday, celebration or special event? Let us create something beautiful for you.</p>
-
-        <div class="menu-grid">
-
-          <article class="menu-card">
-            <img src="assets/customized-birthday-cake.jpg.png" alt="Customized Birthday Cakes" loading="lazy">
-            <div class="menu-card-content">
-              <h3>Customized Cakes</h3>
-              <p>Beautiful customized cakes designed for your special occasions.</p>
-              <button onclick="enquireWhatsApp('Customized Cakes')">Enquire on WhatsApp</button>
-            </div>
-          </article>
-
-          <article class="menu-card">
-            <img src="assets/event-cupcakes.jpg.png" alt="Event Cupcakes" loading="lazy">
-            <div class="menu-card-content">
-              <h3>Event Cupcakes</h3>
-              <p>Thoughtfully prepared cupcakes for birthdays, parties and events.</p>
-              <button onclick="enquireWhatsApp('Event Cupcakes')">Enquire on WhatsApp</button>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- Contact CTA -->
-      <section class="menu-cta">
-        <h2>Something Special in Mind?</h2>
-        <p>Contact us for orders, enquiries and customized requirements.</p>
-        <button onclick="enquireWhatsApp('General Food Enquiry')">Contact Us on WhatsApp</button>
-      </section>
-
+        <p>
+            Homemade favourites for everyday cravings, and thoughtful treats
+            for your special occasions. Choose what you love and message us to order.
+        </p>
     </section>
 
-  </main>
+    <!-- EVERYDAY FOOD PRODUCTS -->
+    <section class="menu-category">
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Leaf Lantern. Good Food Delivered.</p>
-    </div>
-  </footer>
+        <div class="category-heading">
+            <div>
+                <p class="eyebrow">01 / EVERYDAY FAVOURITES</p>
+                <h2>Made fresh, <em>shared happily.</em></h2>
+            </div>
 
-  <script src="script.js"></script>
+            <p>
+                Small-batch homemade goodness for family time, gatherings
+                and everything in between.
+            </p>
+        </div>
 
-  <script>
-    function orderWhatsApp(product, price, minimum) {
-      const message = `Hello Leaf Lantern! I would like to order ${product}. Price: ₹${price} per unit. Minimum order: ${minimum}. Please share the details.`;
-      window.open(`https://wa.me/917293045747?text=${encodeURIComponent(message)}`, '_blank');
-    }
+        <section class="product-grid">
 
-    function enquireWhatsApp(product) {
-      const message = `Hello Leaf Lantern! I would like to enquire about ${product}. Please share the details.`;
-      window.open(`https://wa.me/917293045747?text=${encodeURIComponent(message)}`, '_blank');
-    }
-  </script>
+            <!-- PUFFS -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/puffs.jpg.jpeg" alt="Freshly baked puffs">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Puffs</h2>
+                        <span class="tag">₹25 each · Min. 12</span>
+                    </div>
+
+                    <p>
+                        Fresh, savoury puffs perfect for sharing with family and friends.
+                    </p>
+
+                    <label for="qty-puffs">Quantity (minimum 12)</label>
+                    <input id="qty-puffs" type="number" min="12" step="1" value="12">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Puffs',25,12,'qty-puffs')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+            <!-- HOMEMADE CUTLETS -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/cutlet.jpg.jpeg" alt="Homemade cutlets">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Homemade Cutlets</h2>
+                        <span class="tag">₹25 each · Min. 12</span>
+                    </div>
+
+                    <p>
+                        Tasty homemade cutlets, great for snacks and get-togethers.
+                    </p>
+
+                    <label for="qty-cutlets">Quantity (minimum 12)</label>
+                    <input id="qty-cutlets" type="number" min="12" step="1" value="12">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Homemade Cutlets',25,12,'qty-cutlets')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+            <!-- HOMEMADE SANDWICHES -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/sandwich.jpg.jpeg" alt="Homemade sandwiches">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Homemade Sandwiches</h2>
+                        <span class="tag">₹45 each · Min. 12</span>
+                    </div>
+
+                    <p>
+                        Freshly prepared homemade sandwiches for a satisfying bite.
+                    </p>
+
+                    <label for="qty-sandwiches">Quantity (minimum 12)</label>
+                    <input id="qty-sandwiches" type="number" min="12" step="1" value="12">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Homemade Sandwiches',45,12,'qty-sandwiches')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+            <!-- PLUM CAKE -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/plum-cake.jpg.jpeg" alt="Homemade plum cake">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Plum Cake</h2>
+                        <span class="tag">₹300 / 400 g · Min. 3</span>
+                    </div>
+
+                    <p>
+                        A delicious plum cake, ideal for celebrations and sharing.
+                    </p>
+
+                    <label for="qty-cake">Quantity (minimum 3)</label>
+                    <input id="qty-cake" type="number" min="3" step="1" value="3">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Plum Cake',300,3,'qty-cake')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+            <!-- NON-ALCOHOLIC WINE -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/wine.jpg.webp" alt="Non-alcoholic wine">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Non-Alcoholic Wine</h2>
+                        <span class="tag">₹350 / 750 ml · Min. 3</span>
+                    </div>
+
+                    <p>
+                        A celebratory non-alcoholic drink for special occasions.
+                    </p>
+
+                    <label for="qty-wine">Quantity (minimum 3)</label>
+                    <input id="qty-wine" type="number" min="3" step="1" value="3">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Non-Alcoholic Wine',350,3,'qty-wine')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+            <!-- HOMEMADE PICKLES -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/homemade-pickles.png"
+                         alt="Homemade mango pickles">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Homemade Pickles</h2>
+                    </div>
+
+                    <p>
+                        Homemade pickles prepared with care. Get in touch
+                        with us to know more.
+                    </p>
+
+                    <button class="order-button"
+                        onclick="enquireWhatsApp('Hello Leaf Lantern! I would like to enquire about homemade pickles. Please share the available options and details.')">
+                        Enquire on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+        </section>
+    </section>
+
+    <!-- CUSTOMIZED CAKES AND EVENT CUPCAKES -->
+    <section class="occasion-section">
+
+        <div class="category-heading">
+            <div>
+                <p class="eyebrow">02 / MADE FOR YOUR MOMENTS</p>
+
+                <h2>
+                    Something sweet<br>
+                    <em>to celebrate.</em>
+                </h2>
+            </div>
+
+            <p>
+                Planning a birthday, a gathering or a thoughtful surprise?
+                Let's create a treat around your occasion.
+            </p>
+        </div>
+
+        <div class="occasion-grid">
+
+            <!-- CUSTOMIZED CAKES -->
+            <article class="occasion-card cake-feature">
+
+                <div class="occasion-visual cake-visual">
+
+                    <span class="visual-label">A LITTLE EXTRA SPECIAL</span>
+
+                    <img
+                        class="occasion-photo"
+                        src="assets/customized-birthday-cake.jpg.png"
+                        alt="Customized birthday cake made for your celebration"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="occasion-copy">
+
+                    <p class="eyebrow">CUSTOMIZED CAKES</p>
+
+                    <h3>
+                        Made just<br>
+                        <em>for you.</em>
+                    </h3>
+
+                    <p>
+                        Birthday cakes, anniversary cakes, themed designs
+                        and personalized creations made for your celebration.
+                    </p>
+
+                    <button class="order-button"
+                        onclick="enquireWhatsApp('Hello Leaf Lantern! I would like to enquire about a customized cake. Please share your designs, catalogue and pricing.')">
+                        Enquire about cakes ↗
+                    </button>
+
+                </div>
+            </article>
+
+            <!-- EVENT CUPCAKES -->
+            <article class="occasion-card cupcake-feature">
+
+                <div class="occasion-visual cupcake-visual">
+
+                    <span class="visual-label">SWEET LITTLE DETAILS</span>
+
+                    <img
+                        class="occasion-photo"
+                        src="assets/event-cupcakes.jpg.png"
+                        alt="Decorated cupcakes for birthdays and special events"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="occasion-copy">
+
+                    <p class="eyebrow">EVENT CUPCAKES</p>
+
+                    <h3>
+                        Little treats,<br>
+                        <em>big smiles.</em>
+                    </h3>
+
+                    <p>
+                        Thoughtful cupcake orders for birthdays, weddings,
+                        engagements, corporate events and themed celebrations.
+                    </p>
+
+                    <button class="order-button"
+                        onclick="enquireWhatsApp('Hello Leaf Lantern! I would like to enquire about event cupcakes. Please share your designs, catalogue and pricing.')">
+                        Enquire about cupcakes ↗
+                    </button>
+
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ORDER INFORMATION -->
+    <p class="menu-footnote">
+        Prices, flavours, designs, availability and delivery charges can be
+        confirmed with us on WhatsApp. Custom orders are confirmed after we
+        discuss your requirements.
+    </p>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <span>© <span id="year"></span> Leaf Lantern</span>
+    <span>Good food delivered.</span>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

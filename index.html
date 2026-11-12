@@ -1,586 +1,374 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="Leaf Lantern offers homemade food, cakes, photography, videography and creative services.">
-
-  <meta name="theme-color" content="#f7f5ed">
-
-  <title>Leaf Lantern | Good Food. Beautiful Stories.</title>
-
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-    /* Compact, mobile-first homepage */
-
-    .home-hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 28px;
-      min-height: auto;
-      padding: 24px 0 36px;
-    }
-
-    .home-hero .hero-copy h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      margin-bottom: 16px;
-    }
-
-    .home-hero .hero-copy .lead {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .home-hero .hero-visual {
-      min-height: 0;
-      background: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: visible;
-    }
-
-    .home-hero .hero-visual::before,
-    .home-hero .hero-visual::after {
-      display: none;
-      content: none;
-    }
-
-    .hero-brand-logo {
-      display: block;
-      width: 100%;
-      max-width: 330px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .home-hero .eyebrow {
-      margin-bottom: 12px;
-    }
-
-    .home-hero .hero-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
-      margin: 22px 0 0;
-    }
-
-    .home-hero .hero-actions .button {
-      width: 100%;
-      min-height: 48px;
-    }
-
-    .home-hero .hero-actions .text-link {
-      display: none;
-    }
-
-    .home-hero .hero-note {
-      display: none;
-    }
-
-    /* Short introduction */
-
-    .intro-strip {
-      justify-content: center;
-      text-align: center;
-      padding: 16px 0;
-    }
-
-    .intro-strip p {
-      margin: 0;
-    }
-
-    .intro-strip span {
-      display: none;
-    }
-
-    /* Two main business cards */
-
-    .world-section {
-      padding: 42px 0 20px;
-    }
-
-    .section-heading {
-      margin-bottom: 24px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .division-grid {
-      gap: 18px;
-    }
-
-    .division-card {
-      overflow: hidden;
-    }
-
-    .division-art {
-      height: 260px;
-    }
-
-    .division-art-image {
-      position: absolute;
-      inset: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .division-art .art-kicker {
-      position: absolute;
-      z-index: 2;
-      top: 16px;
-      left: 16px;
-    }
-
-    .food-art::after,
-    .studio-art::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.2),
-        transparent 40%,
-        rgba(0, 0, 0, 0.3)
-      );
-      pointer-events: none;
-    }
-
-    .food-art .food-plate,
-    .studio-art .studio-frame {
-      display: none;
-    }
-
-    .division-copy {
-      padding: 20px;
-    }
-
-    .division-copy .eyebrow {
-      font-size: 0.62rem;
-      margin-bottom: 8px;
-    }
-
-    .division-copy h3 {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
-
-    .division-copy > p:not(.eyebrow) {
-      font-size: 0.85rem;
-      line-height: 1.55;
-      margin: 8px 0;
-    }
-
-    .arrow-link {
-      margin-top: 10px;
-      gap: 12px;
-    }
-
-    /* Compact contact section */
-
-    .closing-band {
-      margin-top: 35px;
-      padding: 38px 20px;
-    }
-
-    .closing-band .eyebrow {
-      margin-bottom: 10px;
-    }
-
-    .closing-band h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 12px;
-    }
-
-    .closing-band > p:not(.eyebrow) {
-      font-size: 0.88rem;
-      margin-bottom: 20px;
-    }
-
-    .closing-band .button {
-      min-height: 48px;
-    }
-
-    /* Mobile layout */
-
-    @media (max-width: 680px) {
-      main {
-        padding: 18px 16px 38px;
-      }
-
-      .site-header {
-        padding: 8px 16px;
-        gap: 12px;
-      }
-
-      .brand img {
-        height: 44px;
-        max-width: 150px;
-      }
-
-      .home-hero {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 10px 0 24px;
-      }
-
-      .home-hero .hero-visual {
-        order: -1;
-        min-height: 0;
-        padding: 0;
-      }
-
-      .hero-brand-logo {
-        width: 100%;
-        max-width: 185px;
-        max-height: 155px;
-        object-fit: contain;
-      }
-
-      .home-hero .hero-copy {
-        text-align: center;
-      }
-
-      .home-hero .hero-copy h1 {
-        font-size: clamp(2.35rem, 9vw, 3.2rem);
-        line-height: 1.08;
-        margin-bottom: 12px;
-      }
-
-      .home-hero .hero-copy .lead {
-        font-size: 0.88rem;
-        line-height: 1.5;
-        margin: 0 auto 16px;
-        max-width: 330px;
-      }
-
-      .home-hero .eyebrow {
-        font-size: 0.58rem;
-        letter-spacing: 0.14em;
-      }
-
-      .home-hero .hero-actions {
-        max-width: 320px;
-        margin: 18px auto 0;
-        gap: 9px;
-      }
-
-      .home-hero .hero-actions .button {
-        min-height: 46px;
-        padding: 12px 16px;
-      }
-
-      .intro-strip {
-        padding: 14px 0;
-      }
-
-      .intro-strip p {
-        font-size: 0.62rem;
-        letter-spacing: 0.14em;
-      }
-
-      .world-section {
-        padding: 34px 0 10px;
-      }
-
-      .section-heading {
-        margin-bottom: 20px;
-      }
-
-      .section-heading .eyebrow {
-        margin-bottom: 9px;
-      }
-
-      .section-heading h2 {
-        font-size: 2rem;
-      }
-
-      .division-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .division-art {
-        height: 220px;
-      }
-
-      .division-copy {
-        padding: 18px;
-      }
-
-      .division-copy h3 {
-        font-size: 1.75rem;
-      }
-
-      .division-copy > p:not(.eyebrow) {
-        max-width: 100%;
-      }
-
-      .closing-band {
-        margin-top: 30px;
-        padding: 32px 18px;
-      }
-
-      .closing-band h2 {
-        font-size: 2rem;
-      }
-
-      footer {
-        padding: 18px 16px;
-        text-align: center;
-        align-items: center;
-      }
-    }
-
-    /* Very narrow phones */
-
-    @media (max-width: 360px) {
-      .hero-brand-logo {
-        max-width: 155px;
-        max-height: 135px;
-      }
-
-      .home-hero .hero-copy h1 {
-        font-size: 2.15rem;
-      }
-
-      .section-heading h2 {
-        font-size: 1.8rem;
-      }
-
-      .division-art {
-        height: 195px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Homemade favourites, customized cakes and event cupcakes from Leaf Lantern Food.">
+
+    <title>Food &amp; Menu | Leaf Lantern</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Cake and cupcake photo styling */
+        .occasion-visual {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .occasion-photo {
+            display: block;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+
+        .occasion-visual .visual-label {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body>
 
 <header class="site-header">
-
-  <a class="brand" href="index.html" aria-label="Leaf Lantern home">
-    <img
-      src="assets/Leaf Lantern_ Good Food Delivered.png"
-      alt="Leaf Lantern"
-    >
-  </a>
-
-  <button
-    class="menu-toggle"
-    aria-label="Toggle navigation"
-    aria-expanded="false"
-  >
-    ☰
-  </button>
-
-  <nav class="nav">
-    <a class="active" href="index.html">Home</a>
-    <a href="menu.html">Food &amp; Menu</a>
-    <a href="creative-studio.html">Creative Studio</a>
-    <a href="delivery.html">Delivery &amp; Contact</a>
-  </nav>
-
-</header>
-
-<main>
-
-  <!-- COMPACT HERO -->
-  <section class="home-hero">
-
-    <div class="hero-copy">
-
-      <p class="eyebrow">WELCOME TO LEAF LANTERN</p>
-
-      <h1>
-        Good Food.<br>
-        <em>Beautiful Stories.</em>
-      </h1>
-
-      <p class="lead">
-        Homemade treats, photography and creative services.
-      </p>
-
-      <div class="hero-actions">
-
-        <a class="button" href="menu.html">
-          Explore Food <span>→</span>
-        </a>
-
-        <a class="button" href="creative-studio.html">
-          Creative Studio <span>→</span>
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="hero-visual">
-
-      <img
-        src="assets/Leaf Lantern_ Good Food Delivered.png"
-        alt="Leaf Lantern — Good Food Delivered"
-        class="hero-brand-logo"
-      >
-
-    </div>
-
-  </section>
-
-  <!-- SHORT INTRODUCTION -->
-  <section class="intro-strip">
-
-    <p>MADE WITH CARE. CREATED WITH PURPOSE.</p>
-
-    <span>Leaf Lantern</span>
-
-  </section>
-
-  <!-- FOOD AND CREATIVE SERVICES -->
-  <section class="world-section" id="our-world">
-
-    <div class="section-heading">
-
-      <p class="eyebrow">EXPLORE LEAF LANTERN</p>
-
-      <h2>
-        What are you<br>
-        <em>looking for?</em>
-      </h2>
-
-    </div>
-
-    <div class="division-grid">
-
-      <!-- FOOD CARD -->
-      <article class="division-card food-card">
-
-        <div class="division-art food-art">
-
-          <span class="art-kicker">01 / FOOD</span>
-
-          <img
-            class="division-art-image"
-            src="assets/homemade-food.jpg.png"
-            alt="Homemade food prepared with care"
-            loading="lazy"
-          >
-
-          <div class="food-plate">
-            <i></i>
-            <b>Made<br>with care</b>
-          </div>
-
-        </div>
-
-        <div class="division-copy">
-
-          <p class="eyebrow">LEAF LANTERN FOOD</p>
-
-          <h3>
-            Food &amp; <em>Treats.</em>
-          </h3>
-
-          <p>
-            Homemade savouries, cakes and sweet treats.
-          </p>
-
-          <a class="arrow-link" href="menu.html">
-            Explore Menu <span>↗</span>
-          </a>
-
-        </div>
-
-      </article>
-
-      <!-- CREATIVE STUDIO CARD -->
-      <article class="division-card studio-card">
-
-        <div class="division-art studio-art">
-
-          <span class="art-kicker">02 / CREATIVE</span>
-
-          <img
-            class="division-art-image"
-            src="assets/creative-story.jpg.png"
-            alt="Creative photography and visual storytelling"
-            loading="lazy"
-          >
-
-          <div class="studio-frame">
-
-            <div class="frame-sun"></div>
-            <div class="frame-line"></div>
-
-            <span>THE ART OF<br>YOUR STORY</span>
-
-          </div>
-
-        </div>
-
-        <div class="division-copy">
-
-          <p class="eyebrow">LEAF LANTERN CREATIVE STUDIO</p>
-
-          <h3>
-            Creative <em>Studio.</em>
-          </h3>
-
-          <p>
-            Photography, videography and creative editing.
-          </p>
-
-          <a class="arrow-link" href="creative-studio.html">
-            Explore Studio <span>↗</span>
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- SIMPLE CONTACT SECTION -->
-  <section class="closing-band">
-
-    <p class="eyebrow">LET'S CONNECT</p>
-
-    <h2>
-      Something<br>
-      in mind?
-    </h2>
-
-    <p>
-      Orders, celebrations or creative projects.
-    </p>
-
-    <a class="button button-light" href="delivery.html">
-      Contact Us <span>→</span>
+    <a class="brand" href="index.html">
+        <img src="assets/Leaf Lantern_ Good Food Delivered.png" alt="Leaf Lantern">
     </a>
 
-  </section>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="menu.html">Food &amp; Menu</a>
+        <a href="creative-studio.html">Creative Studio</a>
+        <a href="delivery.html">Delivery &amp; Contact</a>
+    </nav>
+</header>
+
+<main class="page-main">
+
+    <!-- PAGE INTRODUCTION -->
+    <section class="page-heading">
+        <p class="eyebrow">LEAF LANTERN FOOD</p>
+
+        <h1>Good things to <em>share.</em></h1>
+
+        <p>
+            Homemade favourites for everyday cravings, and thoughtful treats
+            for your special occasions. Choose what you love and message us to order.
+        </p>
+    </section>
+
+
+    <!-- EVERYDAY FOOD PRODUCTS -->
+    <section class="menu-category">
+
+        <div class="category-heading">
+            <div>
+                <p class="eyebrow">01 / EVERYDAY FAVOURITES</p>
+                <h2>Made fresh, <em>shared happily.</em></h2>
+            </div>
+
+            <p>
+                Small-batch homemade goodness for family time, gatherings
+                and everything in between.
+            </p>
+        </div>
+
+        <section class="product-grid">
+
+            <!-- PUFFS -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/puffs.jpg.jpeg" alt="Freshly baked puffs">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Puffs</h2>
+                        <span class="tag">₹25 each · Min. 12</span>
+                    </div>
+
+                    <p>
+                        Fresh, savoury puffs perfect for sharing with family and friends.
+                    </p>
+
+                    <label for="qty-puffs">Quantity (minimum 12)</label>
+                    <input id="qty-puffs" type="number" min="12" step="1" value="12">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Puffs',25,12,'qty-puffs')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- HOMEMADE CUTLETS -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/cutlet.jpg.jpeg" alt="Homemade cutlets">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Homemade Cutlets</h2>
+                        <span class="tag">₹25 each · Min. 12</span>
+                    </div>
+
+                    <p>
+                        Tasty homemade cutlets, great for snacks and get-togethers.
+                    </p>
+
+                    <label for="qty-cutlets">Quantity (minimum 12)</label>
+                    <input id="qty-cutlets" type="number" min="12" step="1" value="12">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Homemade Cutlets',25,12,'qty-cutlets')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- HOMEMADE SANDWICHES -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/sandwich.jpg.jpeg" alt="Homemade sandwiches">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Homemade Sandwiches</h2>
+                        <span class="tag">₹45 each · Min. 12</span>
+                    </div>
+
+                    <p>
+                        Freshly prepared homemade sandwiches for a satisfying bite.
+                    </p>
+
+                    <label for="qty-sandwiches">Quantity (minimum 12)</label>
+                    <input id="qty-sandwiches" type="number" min="12" step="1" value="12">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Homemade Sandwiches',45,12,'qty-sandwiches')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- PLUM CAKE -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/plum-cake.jpg.jpeg" alt="Homemade plum cake">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Plum Cake</h2>
+                        <span class="tag">₹300 / 400 g · Min. 3</span>
+                    </div>
+
+                    <p>
+                        A delicious plum cake, ideal for celebrations and sharing.
+                    </p>
+
+                    <label for="qty-cake">Quantity (minimum 3)</label>
+                    <input id="qty-cake" type="number" min="3" step="1" value="3">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Plum Cake',300,3,'qty-cake')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- NON-ALCOHOLIC WINE -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/wine.jpg.webp" alt="Non-alcoholic wine">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Non-Alcoholic Wine</h2>
+                        <span class="tag">₹350 / 750 ml · Min. 3</span>
+                    </div>
+
+                    <p>
+                        A celebratory non-alcoholic drink for special occasions.
+                    </p>
+
+                    <label for="qty-wine">Quantity (minimum 3)</label>
+                    <input id="qty-wine" type="number" min="3" step="1" value="3">
+
+                    <button class="order-button"
+                        onclick="orderProduct('Non-Alcoholic Wine',350,3,'qty-wine')">
+                        Order on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+
+            <!-- HOMEMADE PICKLES -->
+            <article class="product-card">
+                <div class="product-art">
+                    <img src="assets/homemade-pickles.png"
+                         alt="Homemade mango pickles">
+                </div>
+
+                <div class="product-info">
+                    <div class="product-top">
+                        <h2>Homemade Pickles</h2>
+                    </div>
+
+                    <p>
+                        Homemade pickles prepared with care. Get in touch
+                        with us to know more.
+                    </p>
+
+                    <button class="order-button"
+                        onclick="enquireWhatsApp('Hello Leaf Lantern! I would like to enquire about homemade pickles. Please share the available options and details.')">
+                        Enquire on WhatsApp ↗
+                    </button>
+                </div>
+            </article>
+
+        </section>
+    </section>
+
+
+    <!-- CUSTOMIZED CAKES AND EVENT CUPCAKES -->
+    <section class="occasion-section">
+
+        <div class="category-heading">
+            <div>
+                <p class="eyebrow">02 / MADE FOR YOUR MOMENTS</p>
+
+                <h2>
+                    Something sweet<br>
+                    <em>to celebrate.</em>
+                </h2>
+            </div>
+
+            <p>
+                Planning a birthday, a gathering or a thoughtful surprise?
+                Let's create a treat around your occasion.
+            </p>
+        </div>
+
+
+        <div class="occasion-grid">
+
+            <!-- CUSTOMIZED CAKES -->
+            <article class="occasion-card cake-feature">
+
+                <div class="occasion-visual cake-visual">
+
+                    <span class="visual-label">A LITTLE EXTRA SPECIAL</span>
+
+                    <img
+                        class="occasion-photo"
+                        src="assets/customized-birthday-cake.jpg.png"
+                        alt="Customized birthday cake made for your celebration"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="occasion-copy">
+
+                    <p class="eyebrow">CUSTOMIZED CAKES</p>
+
+                    <h3>
+                        Made just<br>
+                        <em>for you.</em>
+                    </h3>
+
+                    <p>
+                        Birthday cakes, anniversary cakes, themed designs
+                        and personalized creations made for your celebration.
+                    </p>
+
+                    <button class="order-button"
+                        onclick="enquireWhatsApp('Hello Leaf Lantern! I would like to enquire about a customized cake. Please share your designs, catalogue and pricing.')">
+                        Enquire about cakes ↗
+                    </button>
+
+                </div>
+            </article>
+
+
+            <!-- EVENT CUPCAKES -->
+            <article class="occasion-card cupcake-feature">
+
+                <div class="occasion-visual cupcake-visual">
+
+                    <span class="visual-label">SWEET LITTLE DETAILS</span>
+
+                    <img
+                        class="occasion-photo"
+                        src="assets/event-cupcakes.jpg.png"
+                        alt="Decorated cupcakes for birthdays and special events"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="occasion-copy">
+
+                    <p class="eyebrow">EVENT CUPCAKES</p>
+
+                    <h3>
+                        Little treats,<br>
+                        <em>big smiles.</em>
+                    </h3>
+
+                    <p>
+                        Thoughtful cupcake orders for birthdays, weddings,
+                        engagements, corporate events and themed celebrations.
+                    </p>
+
+                    <button class="order-button"
+                        onclick="enquireWhatsApp('Hello Leaf Lantern! I would like to enquire about event cupcakes. Please share your designs, catalogue and pricing.')">
+                        Enquire about cupcakes ↗
+                    </button>
+
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ORDER INFORMATION -->
+    <p class="menu-footnote">
+        Prices, flavours, designs, availability and delivery charges can be
+        confirmed with us on WhatsApp. Custom orders are confirmed after we
+        discuss your requirements.
+    </p>
 
 </main>
 
+
+<!-- FOOTER -->
 <footer>
-
-  <span>© <span id="year"></span> Leaf Lantern</span>
-
-  <span>Good things grow here.</span>
-
+    <span>© <span id="year"></span> Leaf Lantern</span>
+    <span>Good food delivered.</span>
 </footer>
+
 
 <script src="script.js"></script>
 

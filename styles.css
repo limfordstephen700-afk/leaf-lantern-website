@@ -58,3 +58,102 @@
     position: relative;
     z-index: 5;
 }
+
+/* LEAF LANTERN MENU PAGE */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.menu-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    box-shadow: 0 8px 25px #24392b08;
+}
+
+.menu-card > img {
+    display: block !important;
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    object-position: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.menu-card-content {
+    padding: 21px;
+}
+
+.menu-card-content h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--forest);
+    margin: 0 0 10px;
+}
+
+.menu-card-content p {
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.menu-card-content .price {
+    color: var(--forest);
+    font-weight: 700;
+}
+
+.menu-card-content .minimum {
+    font-size: 0.78rem;
+}
+
+.menu-card-content button {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--forest);
+    color: white;
+    border: 1px solid var(--forest);
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.menu-card-content button:hover {
+    background: #315442;
+}
+
+.special-orders {
+    margin-top: 75px;
+}
+
+.menu-cta {
+    background: var(--forest-deep);
+    color: white;
+    text-align: center;
+    padding: 55px 25px;
+    margin-top: 65px;
+}
+
+.menu-cta h2 {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+}
+
+.menu-cta p {
+    color: #c5cec4;
+}
+
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
